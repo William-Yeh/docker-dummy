@@ -20,3 +20,4 @@ notify:
   webhooks:
     # A list of hook hashes, containing the url field
     - url: http://requestb.in/1cu4zeh1
+    - url: https://vbowl3938ejo.runscope.net
