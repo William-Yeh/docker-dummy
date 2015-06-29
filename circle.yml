@@ -1,0 +1,22 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker version
+
+    - docker build  -t dummy   .
+
+test:
+  override:
+    - docker run -i dummy   > result
+    - echo "==> Validating the test results..."
+    - grep '^PID' result
+
+
+notify:
+  webhooks:
+    # A list of hook hashes, containing the url field
+    - url: http://requestb.in/1cu4zeh1
